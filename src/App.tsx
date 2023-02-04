@@ -1,8 +1,12 @@
 import React from 'react';
-import {View} from 'react-native';
+import {ThemeProvider} from 'styled-components/native';
 
-const src: React.FC = () => {
-  return <View />;
+import useAppearance from './hooks/useAppearance';
+
+const App: React.FC = () => {
+  const {theme} = useAppearance();
+
+  return <ThemeProvider theme={theme} />;
 };
 
-export {src};
+export default App;
