@@ -7,7 +7,9 @@
     "ios": "react-native run-ios",
     "lint": "eslint .",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest",
+    "preandroid": "npx react-native-asset",
+    "preios": "npx react-native-asset"
   },
   "dependencies": {
     "react": "18.2.0",
