@@ -9,7 +9,7 @@ export const Container = styled.Text<ContainerProps>`
   }};
   font-size: ${({theme, typography}) => {
     return theme.typography[typography].fontSize;
-  }};
+  }}px;
   font-family: ${({theme, typography}) => {
     return theme.typography[typography].fontFamily;
   }};
