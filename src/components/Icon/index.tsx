@@ -1,7 +1,6 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import {Container} from './styles';
 import {IconProps} from './types';
-import {ThemeContext} from 'styled-components/native';
 import Icons from '../../constants/icon';
 
 const Icon = ({
@@ -10,14 +9,12 @@ const Icon = ({
   activeColor,
   style,
 }: Omit<IconProps, 'source'>) => {
-  const {colors} = useContext(ThemeContext);
-
   if (activeColor) {
     return (
       <Container
         size={size}
         source={Icons[icon]}
-        style={[{tintColor: colors[activeColor].main}, style]}
+        style={[{tintColor: activeColor}, style]}
       />
     );
   }
