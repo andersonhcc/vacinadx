@@ -3,6 +3,12 @@
   "compilerOptions": {
     "types": [
     "@types/styled-components-react-native"
-    ]
+    ],
+    "baseUrl": "./",
+    "paths": {
+      "~/*": ["src/*"]
+    },
+    "rootDirs": ["src"],
   }
+
 }

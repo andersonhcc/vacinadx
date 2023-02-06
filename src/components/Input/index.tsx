@@ -19,7 +19,7 @@ import {
   Label,
   IconContainer,
 } from './styles';
-import {TouchableOpacity} from 'react-native/types';
+import {TouchableOpacity} from 'react-native';
 import {Icon} from '../../components/Icon';
 
 const Input: React.ForwardRefRenderFunction<InputValueRef, InputProps> = (

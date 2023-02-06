@@ -10,7 +10,7 @@ interface ContainerProps {
 export const Container = styled.TouchableOpacity<ContainerProps>`
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
+  border-radius: ${({theme}) => theme.borders.radius.sm};
   flex-direction: row;
   padding: 12px 0 12px 0;
   border-color: ${({borderColor}) => borderColor || 'transparent'};
@@ -35,7 +35,7 @@ export const Title = styled.Text<TitleProps>`
 `;
 
 export const Loading = styled.ActivityIndicator`
-  margin-left: 10px;
+  margin-left: ${({theme}) => theme.spacing.sm}px;
 `;
 
 // export const Title = styled(Text).attrs({

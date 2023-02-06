@@ -26,15 +26,15 @@ export const Border = styled.View<BorderProps>`
   border-radius: 10px;
   flex-direction: row;
   border-color: ${({borderColor}) => borderColor};
-  border-width: 1px;
+  border-width: ${({theme}) => theme.borders.radius.sm}px;
 `;
 
 export const Error = styled(Text)`
-  margin-top: 10px;
+  margin-top: ${({theme}) => theme.spacing.sm}px;
 `;
 
 export const Label = styled(Text)`
-  margin-bottom: 10px;
+  margin-bottom: ${({theme}) => theme.spacing.sm}px;
 `;
 
 export const IconContainer = styled.View<Pick<InputProps, 'iconPosition'>>`
