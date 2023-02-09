@@ -1,6 +1,7 @@
 import React from 'react';
 import {ThemeProvider} from 'styled-components/native';
-import {Home} from '~/screens/Home';
+import Routes from './navigation';
+import {NavigationContainer} from '@react-navigation/native';
 import useAppearance from './hooks/useAppearance';
 
 const App: React.FC = () => {
@@ -8,7 +9,9 @@ const App: React.FC = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <Home />
+      <NavigationContainer>
+        <Routes />
+      </NavigationContainer>
     </ThemeProvider>
   );
 };
