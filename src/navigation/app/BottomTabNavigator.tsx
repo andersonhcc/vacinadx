@@ -1,10 +1,10 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import React from 'react';
 const BottomTab = createBottomTabNavigator();
-import {Home} from '~/screens/Home';
-import {Profile} from '~/screens/Profile';
+import {Home} from '~/screens/app/Home';
+import {Profile} from '~/screens/app/Profile';
 
-const BottomTabs = () => {
+const BottomTabsNavigator = () => {
   return (
     <BottomTab.Navigator>
       <BottomTab.Screen name="Home" component={Home} />
@@ -13,4 +13,4 @@ const BottomTabs = () => {
   );
 };
 
-export default BottomTabs;
+export default BottomTabsNavigator;
