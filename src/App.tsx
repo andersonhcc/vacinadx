@@ -1,5 +1,6 @@
 import React from 'react';
 import {ThemeProvider} from 'styled-components/native';
+import {AuthProvider} from './context/Auth';
 import Routes from './navigation';
 import {NavigationContainer} from '@react-navigation/native';
 import useAppearance from './hooks/useAppearance';
@@ -10,7 +11,9 @@ const App: React.FC = () => {
   return (
     <ThemeProvider theme={theme}>
       <NavigationContainer>
-        <Routes />
+        <AuthProvider>
+          <Routes />
+        </AuthProvider>
       </NavigationContainer>
     </ThemeProvider>
   );
