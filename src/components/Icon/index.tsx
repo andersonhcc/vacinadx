@@ -15,10 +15,11 @@ const Icon = ({
         size={size}
         source={Icons[icon]}
         style={[{tintColor: activeColor}, style]}
+        resizeMode="contain"
       />
     );
   }
-  return <Container size={size} source={Icons[icon]} />;
+  return <Container size={size} source={Icons[icon]} resizeMode="contain" />;
 };
 
-export {Icon};
+export default Icon;
