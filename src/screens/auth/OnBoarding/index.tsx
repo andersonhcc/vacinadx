@@ -5,7 +5,7 @@ import {Text} from '~/components/Text';
 import {useTheme} from 'styled-components';
 
 import {Container, Person, ContainerColumn} from './styles';
-import {useWindowDimensions} from 'react-native/types';
+import {StatusBar, useWindowDimensions} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import useSignInNavigation from '~/hooks/useSignInNavigator';
 
@@ -37,6 +37,11 @@ const OnBoarding: React.FC = () => {
   return (
     <Container>
       <Separator height={spacing.sm} />
+      <StatusBar
+        backgroundColor="transparent"
+        barStyle="dark-content"
+        translucent
+      />
 
       <Person size={heightPerson} icon="doctor" />
 
