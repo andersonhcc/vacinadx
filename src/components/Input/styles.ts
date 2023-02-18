@@ -23,10 +23,10 @@ export const Border = styled.View<BorderProps>`
   background-color: ${({color}) => color};
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
+  border-radius: ${({theme}) => theme.borders.radius.sm}px;
   flex-direction: row;
   border-color: ${({borderColor}) => borderColor};
-  border-width: ${({theme}) => theme.borders.radius.sm}px;
+  border-width: 1px;
 `;
 
 export const Error = styled(Text)`

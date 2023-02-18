@@ -1,5 +1,6 @@
 import styled from 'styled-components/native';
 import {Mode} from './types';
+import {TypographyType} from 'styled-components/native';
 
 interface ContainerProps {
   readonly color: string;
@@ -10,7 +11,7 @@ interface ContainerProps {
 export const Container = styled.TouchableOpacity<ContainerProps>`
   align-items: center;
   justify-content: center;
-  border-radius: ${({theme}) => theme.borders.radius.sm};
+  border-radius: ${({theme}) => theme.borders.radius.sm}px;
   flex-direction: row;
   padding: 12px 0 12px 0;
   border-color: ${({borderColor}) => borderColor || 'transparent'};
@@ -26,11 +27,14 @@ export const Container = styled.TouchableOpacity<ContainerProps>`
 
 interface TitleProps {
   readonly color: string;
+  readonly typography: TypographyType;
 }
 export const Title = styled.Text<TitleProps>`
   align-self: center;
-  font-family: ${({theme}) => theme.typography.body2.fontFamily};
-  font-size: ${({theme}) => theme.typography.body2.fontSize};
+  font-family: ${({theme, typography}) =>
+    theme.typography[typography].fontFamily};
+  font-size: ${({theme, typography}) =>
+    theme.typography[typography].fontSize}px;
   color: ${({color}) => color};
 `;
 
@@ -45,3 +49,8 @@ export const Loading = styled.ActivityIndicator`
 //   align-self: center;
 //   color: ${({color}) => color};
 // `;
+
+export const AbsoluteIcon = styled.View`
+  position: absolute;
+  left: ${({theme}) => theme.spacing.md}px;
+`;

@@ -20,11 +20,11 @@ import {
   IconContainer,
 } from './styles';
 import {TouchableOpacity} from 'react-native';
-import {Icon} from '../../components/Icon';
+import Icon from '../../components/Icon';
 
 const Input: React.ForwardRefRenderFunction<InputValueRef, InputProps> = (
   {
-    color = 'surface',
+    color = 'surface500',
     secureTextEntry,
     icon,
     iconColor,
@@ -113,7 +113,7 @@ const Input: React.ForwardRefRenderFunction<InputValueRef, InputProps> = (
   return (
     <Container>
       {!!label && (
-        <Label color="surface" typography="body3">
+        <Label color="surface600" typography="body3">
           {label}
         </Label>
       )}

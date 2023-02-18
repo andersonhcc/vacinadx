@@ -10,7 +10,7 @@ export interface InputProps extends TextInputProps {
   iconColor?: ColorsType;
   iconPosition?: IconPosition;
   label?: string;
-  error: string;
+  error?: string;
 }
 
 export interface InputValueRef {
