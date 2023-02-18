@@ -13,10 +13,10 @@ const SignInNavigator = () => {
       screenOptions={{
         header: () => null,
       }}>
+      <Stack.Screen name="onBoarding" component={OnBoarding} />
       <Stack.Screen name="access" component={Acess} />
       <Stack.Screen name="login" component={Login} />
       <Stack.Screen name="signUp" component={SignUp} />
-      <Stack.Screen name="onBoarding" component={OnBoarding} />
     </Stack.Navigator>
   );
 };
