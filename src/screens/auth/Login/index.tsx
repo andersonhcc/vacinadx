@@ -10,10 +10,30 @@ import {Container, AcessText, PressableX} from './styles';
 import {Button} from '~/components/Button';
 import {StatusBar} from 'react-native';
 import useSignInNavigation from '~/hooks/useSignInNavigator';
+import {Controller, useForm} from 'react-hook-form';
+import {schemaLogin} from './validation';
+import {yupResolver} from '@hookform/resolvers/yup';
 
 const Login: React.FC = () => {
   const {spacing} = useTheme();
   const navigation = useSignInNavigation();
+
+  /**
+   * Forms
+   */
+
+  const {
+    control,
+    handleSubmit,
+    setValue,
+    formState: {errors},
+  } = useForm({
+    resolver: yupResolver(schemaLogin),
+    defaultValues: {
+      email: '',
+      password: '',
+    },
+  });
 
   /**
    * Callback
@@ -22,6 +42,16 @@ const Login: React.FC = () => {
   const handleGoBack = () => {
     navigation.goBack();
   };
+
+  const onSubmit = async () => {
+    await handleSubmit(
+      ({email, password}) => {
+        console.log(email, password);
+      },
+      () => console.log('form error'),
+    )();
+  };
+
   return (
     <Container>
       <StatusBar
@@ -44,10 +74,49 @@ const Login: React.FC = () => {
       <Separator height={spacing.md} />
       <Text typography="h3">Login</Text>
       <Separator height={spacing.md} />
-      <Input label="Email" icon="checkCircle" iconColor="primary" />
-      <Input label="Senha" secureTextEntry iconColor="primary" />
+
+      <Controller
+        name="email"
+        control={control}
+        render={({field: {ref, onBlur, onChange, value}}) => (
+          <Input
+            ref={ref}
+            autoCapitalize="none"
+            autoComplete="email"
+            keyboardType="email-address"
+            onBlur={onBlur}
+            onChange={onChange}
+            onChangeText={text => setValue('email', text)}
+            value={value}
+            label="Email"
+            icon="checkCircle"
+            iconColor="primary"
+            error={errors.email?.message}
+          />
+        )}
+      />
+
+      <Controller
+        name="password"
+        control={control}
+        render={({field: {ref, onBlur, onChange, value}}) => (
+          <Input
+            ref={ref}
+            autoCapitalize="none"
+            autoComplete="password"
+            onBlur={onBlur}
+            onChange={onChange}
+            value={value}
+            label="Senha"
+            secureTextEntry
+            iconColor="primary"
+            error={errors.password?.message}
+          />
+        )}
+      />
+
       <Separator height={spacing.md} />
-      <Button>Login</Button>
+      <Button onPress={onSubmit}>Login</Button>
       <Separator height={spacing.md} />
       <AcessText color="surface500" typography="body3">
         ou acesse com login social
