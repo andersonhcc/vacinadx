@@ -1,4 +1,4 @@
-// import {RouteProp} from '@react-navigation/native';
+import {RouteProp} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 
 declare global {
@@ -7,6 +7,11 @@ declare global {
     login: undefined;
     onBoarding: undefined;
     signUp: undefined;
+    signUpStep2: {
+      email: string;
+      firstName: string;
+      lastName: string;
+    };
   };
 
   /**
@@ -22,8 +27,8 @@ declare global {
    * useRoute types
    */
 
-  // export type StoriesSignIntackRouteProp = RouteProp<
-  //   HomeStackParamList,
-  //   'acess'
-  // >;
+  export type SignUpStep2StackRouteProp = RouteProp<
+    SignIntackParamList,
+    'signUpStep2'
+  >;
 }
