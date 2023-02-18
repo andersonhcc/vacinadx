@@ -6,13 +6,14 @@ import {useTheme} from 'styled-components';
 import {Text} from '~/components/Text';
 import Input from '~/components/Input';
 
-import {Container, AcessText, PressableX} from './styles';
+import {Container, AcessText} from './styles';
 import {Button} from '~/components/Button';
 import {StatusBar} from 'react-native';
 import useSignInNavigation from '~/hooks/useSignInNavigator';
 import {Controller, useForm} from 'react-hook-form';
 import {schemaLogin} from './validation';
 import {yupResolver} from '@hookform/resolvers/yup';
+import {BackButton} from '~/components/BackButton';
 
 const Login: React.FC = () => {
   const {spacing} = useTheme();
@@ -60,11 +61,7 @@ const Login: React.FC = () => {
         backgroundColor="transparent"
       />
       <HeaderOptions
-        left={
-          <PressableX onPress={handleGoBack}>
-            <Icon size={15} icon="closeX" />
-          </PressableX>
-        }
+        left={<BackButton icon="closeX" onPress={handleGoBack} />}
         right={
           <Text color="primary" typography="body3">
             Esqueci minha senha
@@ -106,6 +103,7 @@ const Login: React.FC = () => {
             autoComplete="password"
             onBlur={onBlur}
             onChange={onChange}
+            onChangeText={text => setValue('password', text)}
             value={value}
             label="Senha"
             secureTextEntry
