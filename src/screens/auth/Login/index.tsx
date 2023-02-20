@@ -14,10 +14,17 @@ import {Controller, useForm} from 'react-hook-form';
 import {schemaLogin} from './validation';
 import {yupResolver} from '@hookform/resolvers/yup';
 import {BackButton} from '~/components/BackButton';
+import useAuth from '~/hooks/useAuth';
 
 const Login: React.FC = () => {
   const {spacing} = useTheme();
   const navigation = useSignInNavigation();
+
+  /**
+   * Hooks
+   */
+
+  const {loading, signIn} = useAuth();
 
   /**
    * Forms
@@ -31,8 +38,8 @@ const Login: React.FC = () => {
   } = useForm({
     resolver: yupResolver(schemaLogin),
     defaultValues: {
-      email: '',
-      password: '',
+      email: __DEV__ ? 'anderson@anderson.com' : '',
+      password: __DEV__ ? '12345678' : '',
     },
   });
 
@@ -47,7 +54,7 @@ const Login: React.FC = () => {
   const onSubmit = async () => {
     await handleSubmit(
       ({email, password}) => {
-        console.log(email, password);
+        signIn({email, password});
       },
       () => console.log('form error'),
     )();
@@ -123,7 +130,9 @@ const Login: React.FC = () => {
       />
 
       <Separator height={spacing.md} />
-      <Button onPress={onSubmit}>Login</Button>
+      <Button onPress={onSubmit} loading={loading} disabled={loading}>
+        Login
+      </Button>
       <Separator height={spacing.md} />
       <AcessText color="surface500" typography="body3">
         ou acesse com login social
