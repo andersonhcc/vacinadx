@@ -5,7 +5,7 @@ import {Separator} from '~/components/Separator';
 import {useTheme} from 'styled-components';
 import {Text} from '~/components/Text';
 import Input from '~/components/Input';
-
+import {GoogleSignin} from '@react-native-google-signin/google-signin';
 import {Container, AcessText} from './styles';
 import {Button} from '~/components/Button';
 import {StatusBar} from 'react-native';
@@ -51,6 +51,15 @@ const Login: React.FC = () => {
       },
       () => console.log('form error'),
     )();
+  };
+
+  const handleGoogleButton = async () => {
+    try {
+      const {user} = await GoogleSignin.signIn();
+      console.log(user);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
@@ -132,6 +141,7 @@ const Login: React.FC = () => {
         typography="caption"
         icon={<Icon icon="google" />}
         color="secondary"
+        onPress={handleGoogleButton}
         mode="outlined">
         Continuar com o Google
       </Button>
