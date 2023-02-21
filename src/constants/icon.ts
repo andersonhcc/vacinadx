@@ -12,6 +12,9 @@ import profile from '../assets/icons/profile/Vector.png';
 import back from '~/assets/icons/back/Vector.png';
 import openEye from '~/assets/icons/openEye/Vector.png';
 import closeEye from '~/assets/icons/closeEye/Vector.png';
+import pin from '~/assets/icons/pin/Vector.png';
+import plus from '~/assets/icons/plus/Vector.png';
+import vaccine from '~/assets/icons/vaccine/Vector.png';
 
 export type NameIconType =
   | 'dog'
@@ -27,6 +30,9 @@ export type NameIconType =
   | 'closeEye'
   | 'home'
   | 'profile'
+  | 'pin'
+  | 'plus'
+  | 'vaccine'
   | 'google';
 
 export default {
@@ -38,6 +44,9 @@ export default {
   apple,
   back,
   openEye,
+  pin,
+  plus,
+  vaccine,
   closeEye,
   google,
   home,
