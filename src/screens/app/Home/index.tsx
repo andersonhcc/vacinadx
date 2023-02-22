@@ -11,10 +11,14 @@ import {Banner} from './localComponents/Banner';
 
 const Home: React.FC = () => {
   return (
-    <Container>
-      <StatusBar barStyle="light-content" />
+    <Container showsVerticalScrollIndicator={false}>
+      <StatusBar
+        barStyle="light-content"
+        translucent
+        backgroundColor="transparent"
+      />
       <Header />
-      <ScrollViewItems horizontal>
+      <ScrollViewItems horizontal showsHorizontalScrollIndicator={false}>
         <SmallCard icon="vaccine" title={'Minhas\nvacinas'} />
         <Separator width={15} />
         <SmallCard icon="plus" title={'Adicionar\nvacinas'} />
@@ -36,7 +40,7 @@ const Home: React.FC = () => {
           date={new Date(2022, 4, 1).toISOString()}
         />
         <Separator height={15} />
-        <Text>Campanhas de vacinação</Text>
+        <Text typography="h7">Campanhas de vacinação</Text>
         <Separator height={15} />
         <Banner source={require('~/assets/images/banner/covid.png')} />
       </Content>

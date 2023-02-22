@@ -16,14 +16,14 @@ const Profile: React.FC = () => {
     <Container>
       <ScrollView>
         <StatusBar barStyle="dark-content" />
+        <Separator height={spacing.lg} />
         <Text typography="h5">Perfil</Text>
         <Separator height={spacing.lg} />
         <Row>
           <Avatar source={{uri: user?.avatar}} />
-          <Separator height={spacing.sm} />
-
+          <Separator width={spacing.sm} />
           <View>
-            <Text typography="h7">{user?.firstName}</Text>
+            <Text typography="h7">Anderson</Text>
             <Text typography="h7">{user?.lastName}</Text>
           </View>
         </Row>

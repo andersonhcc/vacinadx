@@ -14,7 +14,9 @@ const Header: React.FC = () => {
     <Container source={headerImage}>
       <Row>
         <View>
-          <Text typography="h5">Bem vindx</Text>
+          <Text typography="h5" color="background">
+            Bem vindx
+          </Text>
           <Text typography="h6">{user?.firstName}</Text>
           <Avatar source={{uri: user?.avatar}} />
         </View>
