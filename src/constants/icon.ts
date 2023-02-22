@@ -15,6 +15,7 @@ import closeEye from '~/assets/icons/closeEye/Vector.png';
 import pin from '~/assets/icons/pin/Vector.png';
 import plus from '~/assets/icons/plus/Vector.png';
 import vaccine from '~/assets/icons/vaccine/Vector.png';
+import calendar from '~/assets/icons/calendar/Vector.png';
 
 export type NameIconType =
   | 'dog'
@@ -33,6 +34,7 @@ export type NameIconType =
   | 'pin'
   | 'plus'
   | 'vaccine'
+  | 'calendar'
   | 'google';
 
 export default {
@@ -51,4 +53,5 @@ export default {
   google,
   home,
   profile,
+  calendar,
 };
