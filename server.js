@@ -13,6 +13,7 @@ createServer({
       email: 'anderson@anderson.com',
       password: '12345678',
       token: 'salkslskaly293SLAKL',
+      avatar: 'https://avatars.githubusercontent.com/u/103274266?v=4',
     });
   },
   routes() {
