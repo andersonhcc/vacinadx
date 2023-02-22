@@ -16,6 +16,9 @@ import pin from '~/assets/icons/pin/Vector.png';
 import plus from '~/assets/icons/plus/Vector.png';
 import vaccine from '~/assets/icons/vaccine/Vector.png';
 import calendar from '~/assets/icons/calendar/Vector.png';
+import support from '~/assets/icons/support/Vector.png';
+import logout from '~/assets/icons/logout/Vector.png';
+import arrowRight from '~/assets/icons/arrow-right/Vector.png';
 
 export type NameIconType =
   | 'dog'
@@ -35,6 +38,9 @@ export type NameIconType =
   | 'plus'
   | 'vaccine'
   | 'calendar'
+  | 'logout'
+  | 'support'
+  | 'arrowRight'
   | 'google';
 
 export default {
@@ -54,4 +60,7 @@ export default {
   home,
   profile,
   calendar,
+  logout,
+  support,
+  arrowRight,
 };
