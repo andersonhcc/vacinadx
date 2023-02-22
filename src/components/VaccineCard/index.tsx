@@ -1,19 +1,14 @@
 import React, {useMemo} from 'react';
 
-import styles, {
-  BadgeLeft,
-  Container,
-  ChipWrap,
-  Chip,
-  VaccineDate,
-} from './styles';
+import {BadgeLeft, Container, ChipWrap, Chip, VaccineDate} from './styles';
 import {Text} from '../Text';
-import {Pressable, View} from 'react-native';
+import {View} from 'react-native';
 import {Separator} from '../Separator';
 import Icon from '../Icon';
 import {VaccineCardProps} from './types';
 import {format, isBefore} from 'date-fns';
 import {useTheme} from 'styled-components';
+import {Shadow} from '../Shadow';
 
 const VaccineCard = ({date, shot, title, ...rest}: VaccineCardProps) => {
   const {colors} = useTheme();
@@ -47,7 +42,7 @@ const VaccineCard = ({date, shot, title, ...rest}: VaccineCardProps) => {
   }, [shot, colors]);
 
   return (
-    <Pressable style={styles.shadow} {...rest}>
+    <Shadow {...rest}>
       <Container>
         <BadgeLeft
           color={isBeforeToday ? colors.lightGreen.main : colors.orange.main}
@@ -67,7 +62,7 @@ const VaccineCard = ({date, shot, title, ...rest}: VaccineCardProps) => {
           <Text>{formattedDate}</Text>
         </VaccineDate>
       </Container>
-    </Pressable>
+    </Shadow>
   );
 };
 

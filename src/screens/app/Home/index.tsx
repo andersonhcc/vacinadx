@@ -7,6 +7,7 @@ import {StatusBar} from 'react-native';
 import {Separator} from '~/components/Separator';
 import {VaccineCard} from '~/components/VaccineCard';
 import {Text} from '~/components/Text';
+import {Banner} from './localComponents/Banner';
 
 const Home: React.FC = () => {
   return (
@@ -34,6 +35,10 @@ const Home: React.FC = () => {
           shot="single-dose"
           date={new Date(2022, 4, 1).toISOString()}
         />
+        <Separator height={15} />
+        <Text>Campanhas de vacinação</Text>
+        <Separator height={15} />
+        <Banner source={require('~/assets/images/banner/covid.png')} />
       </Content>
     </Container>
   );
