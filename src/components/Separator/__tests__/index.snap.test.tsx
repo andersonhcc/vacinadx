@@ -9,7 +9,7 @@ import {Separator} from '../';
 // Note: test renderer must be required after react-native.
 import renderer from 'react-test-renderer';
 
-describe('Separator', () => {
+describe('Separator snap', () => {
   it('should render without props', () => {
     const {toJSON} = renderer.create(<Separator />);
 
