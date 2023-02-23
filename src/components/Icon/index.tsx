@@ -1,7 +1,7 @@
 import React from 'react';
 import {Container} from './styles';
 import {IconProps} from './types';
-import Icons from '../../constants/icon';
+import Icons from '~/constants/icon';
 
 const Icon = ({
   icon,

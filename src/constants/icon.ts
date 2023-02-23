@@ -22,8 +22,6 @@ import arrowRight from '~/assets/icons/arrow-right/Vector.png';
 
 export type NameIconType =
   | 'dog'
-  | 'eyeOpen'
-  | 'eyeClose'
   | 'doctor'
   | 'vaccinePlus'
   | 'closeX'
