@@ -11,7 +11,12 @@ import {Shadow} from '~/components/Shadow';
 
 const AddVaccine: React.FC = () => {
   const {spacing} = useTheme();
-  const {goBack} = useNavigation();
+  const {goBack, navigate} = useNavigation();
+
+  const handleGoToQrCode = () => {
+    navigate('QrCode');
+  };
+
   return (
     <Container>
       <StatusBar barStyle="dark-content" />
@@ -36,7 +41,7 @@ const AddVaccine: React.FC = () => {
       </Shadow>
       <Separator height={spacing.md} />
 
-      <Shadow>
+      <Shadow onPress={handleGoToQrCode}>
         <Card>
           <Row>
             <Icon icon="qrcode" size={22} />
