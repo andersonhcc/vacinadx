@@ -130,7 +130,11 @@ const Login: React.FC = () => {
       />
 
       <Separator height={spacing.md} />
-      <Button onPress={onSubmit} loading={loading} disabled={loading}>
+      <Button
+        onPress={onSubmit}
+        loading={loading}
+        disabled={loading}
+        testID="button-login-email">
         Login
       </Button>
       <Separator height={spacing.md} />
