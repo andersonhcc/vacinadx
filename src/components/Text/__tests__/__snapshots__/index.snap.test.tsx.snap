@@ -117,7 +117,7 @@ exports[`Text Snapshot should render with primary color 1`] = `
           "fontFamily": "Montserrat-Regular",
           "fontSize": 24,
         },
-        "h7": {
+        "h8": {
           "fontFamily": "Montserrat-SemiBold",
           "fontSize": 24,
         },
@@ -263,7 +263,7 @@ exports[`Text Snapshot should render with typography body3 1`] = `
           "fontFamily": "Montserrat-Regular",
           "fontSize": 24,
         },
-        "h7": {
+        "h8": {
           "fontFamily": "Montserrat-SemiBold",
           "fontSize": 24,
         },
@@ -409,7 +409,7 @@ exports[`Text Snapshot should render without props 1`] = `
           "fontFamily": "Montserrat-Regular",
           "fontSize": 24,
         },
-        "h7": {
+        "h8": {
           "fontFamily": "Montserrat-SemiBold",
           "fontSize": 24,
         },

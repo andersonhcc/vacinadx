@@ -83,6 +83,7 @@ declare module 'styled-components/native' {
     | 'h5'
     | 'h6'
     | 'h7'
+    | 'h8'
     | 'subtitle1'
     | 'subtitle2'
     | 'body1'

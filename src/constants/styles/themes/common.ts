@@ -26,7 +26,7 @@ export const typographyCommon: Typography = {
     fontSize: 24,
     fontFamily: Fonts.montserratRegular,
   },
-  h7: {
+  h8: {
     fontSize: 24,
     fontFamily: Fonts.montserratSemiBold,
   },
