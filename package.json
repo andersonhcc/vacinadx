@@ -38,6 +38,7 @@
     "@babel/runtime": "^7.20.0",
     "@react-native-community/eslint-config": "^3.2.0",
     "@testing-library/jest-native": "^5.4.2",
+    "@testing-library/react-hooks": "^8.0.1",
     "@testing-library/react-native": "^12.0.0-rc.0",
     "@tsconfig/react-native": "^2.0.2",
     "@types/jest": "^29.4.0",
@@ -45,10 +46,12 @@
     "@types/react": "^18.0.24",
     "@types/react-test-renderer": "^18.0.0",
     "@types/styled-components-react-native": "^5.2.1",
+    "axios-mock-adapter": "^1.21.2",
     "babel-jest": "^29.2.1",
     "babel-plugin-root-import": "^6.6.0",
     "eslint": "^8.33.0",
     "jest": "^29.2.1",
+    "jest-styled-components": "^7.1.1",
     "metro-react-native-babel-preset": "0.73.7",
     "miragejs": "^0.1.47",
     "prettier": "^2.4.1",
@@ -57,8 +60,15 @@
   },
   "jest": {
     "preset": "react-native",
+    "setupFiles": [
+      "<rootDir>/jest.setup.js"
+    ],
     "setupFilesAfterEnv": [
       "@testing-library/jest-native/extend-expect"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!**/node_modules/**"
     ]
   }
 }

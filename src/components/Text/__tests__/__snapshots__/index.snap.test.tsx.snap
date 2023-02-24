@@ -1,0 +1,439 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Text Snapshot should render with primary color 1`] = `
+<Text
+  color="primary"
+  style={
+    [
+      {
+        "color": "#3C9BA6",
+        "fontFamily": "OpenSans-Regular",
+        "fontSize": 14,
+      },
+    ]
+  }
+  theme={
+    {
+      "borders": {
+        "radius": {
+          "sm": 10,
+          "xs": 4,
+        },
+      },
+      "colors": {
+        "background": {
+          "main": "#fff",
+          "onMain": "#000",
+        },
+        "error": {
+          "main": "#D93936",
+          "onMain": "#fff",
+        },
+        "lightGreen": {
+          "main": "#95BFA7",
+          "onMain": "#fff",
+        },
+        "orange": {
+          "main": "#F28705",
+          "onMain": "#fff",
+        },
+        "primary": {
+          "main": "#3C9BA6",
+          "onMain": "#fff",
+        },
+        "secondary": {
+          "main": "#072B59",
+          "onMain": "#fff",
+        },
+        "surface": {
+          "main": "#000",
+          "onMain": "#fff",
+        },
+        "surface100": {
+          "main": "#4E4B59",
+          "onMain": "#fff",
+        },
+        "surface50": {
+          "main": "#E1E0E7",
+          "onMain": "#fff",
+        },
+        "surface500": {
+          "main": "#6B7785",
+          "onMain": "#fff",
+        },
+        "surface600": {
+          "main": "#41474D",
+          "onMain": "#fff",
+        },
+      },
+      "spacing": {
+        "lg": 25,
+        "md": 20,
+        "sm": 10,
+        "ty": 4,
+        "xl": 38,
+        "xs": 5,
+        "xxl": 45,
+        "xxxl": 100,
+      },
+      "typography": {
+        "body1": {
+          "fontFamily": "OpenSans-Regular",
+          "fontSize": 14,
+        },
+        "body2": {
+          "fontFamily": "OpenSans-Bold",
+          "fontSize": 16,
+        },
+        "body3": {
+          "fontFamily": "OpenSans-Regular",
+          "fontSize": 14,
+        },
+        "caption": {
+          "fontFamily": "OpenSans-Regular",
+          "fontSize": 16,
+        },
+        "h1": {
+          "fontFamily": "OpenSans-Light",
+          "fontSize": 96,
+        },
+        "h2": {
+          "fontFamily": "Montserrat-Bold",
+          "fontSize": 48,
+        },
+        "h3": {
+          "fontFamily": "Montserrat-Bold",
+          "fontSize": 32,
+        },
+        "h4": {
+          "fontFamily": "Montserrat-SemiBold",
+          "fontSize": 32,
+        },
+        "h5": {
+          "fontFamily": "Montserrat-Bold",
+          "fontSize": 24,
+        },
+        "h6": {
+          "fontFamily": "Montserrat-Regular",
+          "fontSize": 24,
+        },
+        "h7": {
+          "fontFamily": "Montserrat-SemiBold",
+          "fontSize": 24,
+        },
+        "h8": {
+          "fontFamily": "Montserrat-SemiBold",
+          "fontSize": 20,
+        },
+        "overline": {
+          "fontFamily": "OpenSans-SemiBold",
+          "fontSize": 14,
+        },
+        "subtitle1": {
+          "fontFamily": "OpenSans-Regular",
+          "fontSize": 18,
+        },
+        "subtitle2": {
+          "fontFamily": "Montserrat-Bold",
+          "fontSize": 18,
+        },
+      },
+    }
+  }
+  typography="body1"
+>
+  Hello world test
+</Text>
+`;
+
+exports[`Text Snapshot should render with typography body3 1`] = `
+<Text
+  color="surface"
+  style={
+    [
+      {
+        "color": "#000",
+        "fontFamily": "OpenSans-Regular",
+        "fontSize": 14,
+      },
+    ]
+  }
+  theme={
+    {
+      "borders": {
+        "radius": {
+          "sm": 10,
+          "xs": 4,
+        },
+      },
+      "colors": {
+        "background": {
+          "main": "#fff",
+          "onMain": "#000",
+        },
+        "error": {
+          "main": "#D93936",
+          "onMain": "#fff",
+        },
+        "lightGreen": {
+          "main": "#95BFA7",
+          "onMain": "#fff",
+        },
+        "orange": {
+          "main": "#F28705",
+          "onMain": "#fff",
+        },
+        "primary": {
+          "main": "#3C9BA6",
+          "onMain": "#fff",
+        },
+        "secondary": {
+          "main": "#072B59",
+          "onMain": "#fff",
+        },
+        "surface": {
+          "main": "#000",
+          "onMain": "#fff",
+        },
+        "surface100": {
+          "main": "#4E4B59",
+          "onMain": "#fff",
+        },
+        "surface50": {
+          "main": "#E1E0E7",
+          "onMain": "#fff",
+        },
+        "surface500": {
+          "main": "#6B7785",
+          "onMain": "#fff",
+        },
+        "surface600": {
+          "main": "#41474D",
+          "onMain": "#fff",
+        },
+      },
+      "spacing": {
+        "lg": 25,
+        "md": 20,
+        "sm": 10,
+        "ty": 4,
+        "xl": 38,
+        "xs": 5,
+        "xxl": 45,
+        "xxxl": 100,
+      },
+      "typography": {
+        "body1": {
+          "fontFamily": "OpenSans-Regular",
+          "fontSize": 14,
+        },
+        "body2": {
+          "fontFamily": "OpenSans-Bold",
+          "fontSize": 16,
+        },
+        "body3": {
+          "fontFamily": "OpenSans-Regular",
+          "fontSize": 14,
+        },
+        "caption": {
+          "fontFamily": "OpenSans-Regular",
+          "fontSize": 16,
+        },
+        "h1": {
+          "fontFamily": "OpenSans-Light",
+          "fontSize": 96,
+        },
+        "h2": {
+          "fontFamily": "Montserrat-Bold",
+          "fontSize": 48,
+        },
+        "h3": {
+          "fontFamily": "Montserrat-Bold",
+          "fontSize": 32,
+        },
+        "h4": {
+          "fontFamily": "Montserrat-SemiBold",
+          "fontSize": 32,
+        },
+        "h5": {
+          "fontFamily": "Montserrat-Bold",
+          "fontSize": 24,
+        },
+        "h6": {
+          "fontFamily": "Montserrat-Regular",
+          "fontSize": 24,
+        },
+        "h7": {
+          "fontFamily": "Montserrat-SemiBold",
+          "fontSize": 24,
+        },
+        "h8": {
+          "fontFamily": "Montserrat-SemiBold",
+          "fontSize": 20,
+        },
+        "overline": {
+          "fontFamily": "OpenSans-SemiBold",
+          "fontSize": 14,
+        },
+        "subtitle1": {
+          "fontFamily": "OpenSans-Regular",
+          "fontSize": 18,
+        },
+        "subtitle2": {
+          "fontFamily": "Montserrat-Bold",
+          "fontSize": 18,
+        },
+      },
+    }
+  }
+  typography="body3"
+>
+  Hello world test
+</Text>
+`;
+
+exports[`Text Snapshot should render without props 1`] = `
+<Text
+  color="surface"
+  style={
+    [
+      {
+        "color": "#000",
+        "fontFamily": "OpenSans-Regular",
+        "fontSize": 14,
+      },
+    ]
+  }
+  theme={
+    {
+      "borders": {
+        "radius": {
+          "sm": 10,
+          "xs": 4,
+        },
+      },
+      "colors": {
+        "background": {
+          "main": "#fff",
+          "onMain": "#000",
+        },
+        "error": {
+          "main": "#D93936",
+          "onMain": "#fff",
+        },
+        "lightGreen": {
+          "main": "#95BFA7",
+          "onMain": "#fff",
+        },
+        "orange": {
+          "main": "#F28705",
+          "onMain": "#fff",
+        },
+        "primary": {
+          "main": "#3C9BA6",
+          "onMain": "#fff",
+        },
+        "secondary": {
+          "main": "#072B59",
+          "onMain": "#fff",
+        },
+        "surface": {
+          "main": "#000",
+          "onMain": "#fff",
+        },
+        "surface100": {
+          "main": "#4E4B59",
+          "onMain": "#fff",
+        },
+        "surface50": {
+          "main": "#E1E0E7",
+          "onMain": "#fff",
+        },
+        "surface500": {
+          "main": "#6B7785",
+          "onMain": "#fff",
+        },
+        "surface600": {
+          "main": "#41474D",
+          "onMain": "#fff",
+        },
+      },
+      "spacing": {
+        "lg": 25,
+        "md": 20,
+        "sm": 10,
+        "ty": 4,
+        "xl": 38,
+        "xs": 5,
+        "xxl": 45,
+        "xxxl": 100,
+      },
+      "typography": {
+        "body1": {
+          "fontFamily": "OpenSans-Regular",
+          "fontSize": 14,
+        },
+        "body2": {
+          "fontFamily": "OpenSans-Bold",
+          "fontSize": 16,
+        },
+        "body3": {
+          "fontFamily": "OpenSans-Regular",
+          "fontSize": 14,
+        },
+        "caption": {
+          "fontFamily": "OpenSans-Regular",
+          "fontSize": 16,
+        },
+        "h1": {
+          "fontFamily": "OpenSans-Light",
+          "fontSize": 96,
+        },
+        "h2": {
+          "fontFamily": "Montserrat-Bold",
+          "fontSize": 48,
+        },
+        "h3": {
+          "fontFamily": "Montserrat-Bold",
+          "fontSize": 32,
+        },
+        "h4": {
+          "fontFamily": "Montserrat-SemiBold",
+          "fontSize": 32,
+        },
+        "h5": {
+          "fontFamily": "Montserrat-Bold",
+          "fontSize": 24,
+        },
+        "h6": {
+          "fontFamily": "Montserrat-Regular",
+          "fontSize": 24,
+        },
+        "h7": {
+          "fontFamily": "Montserrat-SemiBold",
+          "fontSize": 24,
+        },
+        "h8": {
+          "fontFamily": "Montserrat-SemiBold",
+          "fontSize": 20,
+        },
+        "overline": {
+          "fontFamily": "OpenSans-SemiBold",
+          "fontSize": 14,
+        },
+        "subtitle1": {
+          "fontFamily": "OpenSans-Regular",
+          "fontSize": 18,
+        },
+        "subtitle2": {
+          "fontFamily": "Montserrat-Bold",
+          "fontSize": 18,
+        },
+      },
+    }
+  }
+  typography="body1"
+>
+  Hello world test
+</Text>
+`;
