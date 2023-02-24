@@ -19,6 +19,8 @@ import calendar from '~/assets/icons/calendar/Vector.png';
 import support from '~/assets/icons/support/Vector.png';
 import logout from '~/assets/icons/logout/Vector.png';
 import arrowRight from '~/assets/icons/arrow-right/Vector.png';
+import qrcode from '~/assets/icons/qrcode/Vector.png';
+import pencil from '~/assets/icons/pencil/Vector.png';
 
 export type NameIconType =
   | 'dog'
@@ -39,6 +41,8 @@ export type NameIconType =
   | 'logout'
   | 'support'
   | 'arrowRight'
+  | 'qrcode'
+  | 'pencil'
   | 'google';
 
 export default {
@@ -61,4 +65,6 @@ export default {
   logout,
   support,
   arrowRight,
+  qrcode,
+  pencil,
 };

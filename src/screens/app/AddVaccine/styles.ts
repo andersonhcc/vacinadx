@@ -1,0 +1,20 @@
+import {SafeAreaView} from 'react-native-safe-area-context';
+import styled from 'styled-components/native';
+
+export const Container = styled(SafeAreaView)`
+  flex: 1;
+  padding: 0 ${({theme}) => theme.spacing.md}px;
+`;
+
+export const Card = styled.View`
+  border-radius: ${({theme}) => theme.borders.radius}px;
+  background-color: ${({theme}) => theme.colors.background.main};
+  padding: ${({theme}) => theme.spacing.lg}px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+export const Row = styled.View`
+  flex-direction: row;
+`;

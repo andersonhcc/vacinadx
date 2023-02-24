@@ -1,9 +1,9 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import React from 'react';
-import {Home} from '~/screens/app/Home';
 import {Profile} from '~/screens/app/Profile';
 import Icon from '~/components/Icon';
 import {useTheme} from 'styled-components';
+import {HomeStack} from './HomeStack';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamsList>();
 const BottomTabsNavigator = () => {
@@ -17,7 +17,7 @@ const BottomTabsNavigator = () => {
       }}>
       <BottomTab.Screen
         name="home"
-        component={Home}
+        component={HomeStack}
         options={{
           header: () => null,
           tabBarIcon: ({color}) => <Icon icon="home" activeColor={color} />,
