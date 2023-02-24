@@ -8,8 +8,15 @@ import {Separator} from '~/components/Separator';
 import {VaccineCard} from '~/components/VaccineCard';
 import {Text} from '~/components/Text';
 import {Banner} from './localComponents/Banner';
+import {useNavigation} from '@react-navigation/native';
 
 const Home: React.FC = () => {
+  const {navigate} = useNavigation();
+
+  const handleAddVacine = () => {
+    navigate('AddVaccine');
+  };
+
   return (
     <Container showsVerticalScrollIndicator={false}>
       <StatusBar
@@ -21,7 +28,11 @@ const Home: React.FC = () => {
       <ScrollViewItems horizontal showsHorizontalScrollIndicator={false}>
         <SmallCard icon="vaccine" title={'Minhas\nvacinas'} />
         <Separator width={15} />
-        <SmallCard icon="plus" title={'Adicionar\nvacinas'} />
+        <SmallCard
+          icon="plus"
+          onPress={handleAddVacine}
+          title={'Adicionar\nvacinas'}
+        />
         <Separator width={15} />
         <SmallCard icon="pin" title={'Procurar local\n de vacinação'} />
       </ScrollViewItems>
