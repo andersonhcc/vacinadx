@@ -31,10 +31,7 @@ export const AuthProvider = ({children}: Props) => {
 
   const saveUserToStorageAndConfigToken = async (userData: UserDTO) => {
     api.defaults.headers.Authorization = `Bearer ${userData.token}`;
-    await AsyncStorage.setItem(
-      asyncUserKeys.user,
-      JSON.parse(user as unknown as string),
-    );
+    await AsyncStorage.setItem(asyncUserKeys.user, JSON.stringify(userData));
   };
 
   const signIn = async (data: RequestSignInData) => {
@@ -42,8 +39,8 @@ export const AuthProvider = ({children}: Props) => {
       setLoading(true);
       const response = await signInResource(data);
       setUser(response.user);
-      setIsSignedIn(true);
       await saveUserToStorageAndConfigToken(response.user);
+      setIsSignedIn(true);
     } catch (error) {
       console.log(error);
       Alert.alert('Não foi possível realizar login, tente novamente!');
@@ -57,8 +54,8 @@ export const AuthProvider = ({children}: Props) => {
       setLoading(true);
       const response = await createUserResource(data);
       setUser(response.user);
-      setIsSignedIn(true);
       await saveUserToStorageAndConfigToken(response.user);
+      setIsSignedIn(true);
     } catch (error) {
       console.log(error);
       Alert.alert('Não foi possível realizar login, tente novamente!');
@@ -69,6 +66,7 @@ export const AuthProvider = ({children}: Props) => {
 
   const signOut = async () => {
     setIsSignedIn(false);
+    setUser(undefined);
     api.defaults.headers.Authorization = 'Bearer ';
     await AsyncStorage.clear();
   };

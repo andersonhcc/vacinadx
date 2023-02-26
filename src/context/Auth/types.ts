@@ -16,5 +16,5 @@ export interface AuthContextProp {
 }
 
 export const asyncUserKeys = {
-  user: 'vacinadex:user',
+  user: 'vacinadx:user',
 };

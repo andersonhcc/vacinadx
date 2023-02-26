@@ -5,9 +5,9 @@ import {Container, Circle, Title} from './styles';
 import {Props} from './types';
 import {Shadow} from '~/components/Shadow';
 
-const SmallCard = ({icon, title, ...rest}: Props) => {
+const SmallCard = ({icon, title, onPress}: Props) => {
   return (
-    <Shadow {...rest}>
+    <Shadow onPress={onPress}>
       <Container>
         <Circle>
           <Icon size={20} activeColor="white" icon={icon} />

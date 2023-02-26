@@ -1,10 +1,5 @@
 import React, {useMemo} from 'react';
-import {
-  Pressable,
-  StatusBar,
-  useWindowDimensions,
-  ViewStyle,
-} from 'react-native';
+import {Pressable, StatusBar, useWindowDimensions} from 'react-native';
 import {Container, Content, Scroll} from './styles';
 import {useTheme} from 'styled-components';
 import {Separator} from '~/components/Separator';
@@ -20,16 +15,15 @@ const QrCode: React.FC = () => {
   const {width} = useWindowDimensions();
 
   const cameraStyle = useMemo(
-    () =>
-      ({
-        marginTop: 40,
-        flex: 0,
-        alignSelf: 'center',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: width * 0.7,
-        width: width * 0.7,
-      } as ViewStyle),
+    () => ({
+      marginTop: 40,
+      flex: 0,
+      alignSelf: 'center',
+      justifyContent: 'center',
+      alignItems: 'center',
+      height: width * 0.7,
+      width: width * 0.7,
+    }),
     [width],
   );
 

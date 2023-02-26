@@ -36,7 +36,7 @@ createServer({
 
     this.post('/user', (schema, request) => {
       const body = JSON.parse(request.requestBody);
-      const user = schema.users.create({...body, token: 'salkaslksalksa'});
+      const user = schema.users.create({...body, token: 'salkslskaly293SLAKL'});
       return user;
     });
   },
