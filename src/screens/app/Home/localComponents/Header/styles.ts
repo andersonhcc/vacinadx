@@ -1,11 +1,6 @@
 import styled from 'styled-components/native';
 
-export const Container = styled.ImageBackground.attrs(({theme}) => ({
-  imageStyle: {
-    borderBottomLeftRadius: theme.borders.radius.sm,
-    borderBottomRightRadius: theme.borders.radius.sm,
-  },
-}))`
+export const Container = styled.ImageBackground`
   height: 181px;
   padding: ${({theme}) => theme.spacing.md}px;
   justify-content: flex-end;
