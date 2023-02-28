@@ -16,6 +16,9 @@ const AddVaccine: React.FC = () => {
   const handleGoToQrCode = () => {
     navigate('QrCode');
   };
+  const handleAddVaccineManually = () => {
+    navigate('AddVaccineManually');
+  };
 
   return (
     <Container>
@@ -29,7 +32,7 @@ const AddVaccine: React.FC = () => {
       <Separator height={spacing.sm} />
       <Text>{'Gostaria de adicionar por meio de \nqual método?'}</Text>
       <Separator height={spacing.lg} />
-      <Shadow>
+      <Shadow onPress={handleAddVaccineManually}>
         <Card>
           <Row>
             <Icon icon="pencil" size={22} />
