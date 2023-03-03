@@ -8,13 +8,14 @@ import Input from '~/components/Input';
 import {GoogleSignin} from '@react-native-google-signin/google-signin';
 import {Container, AcessText} from './styles';
 import {Button} from '~/components/Button';
-import {StatusBar} from 'react-native';
+import {ScrollView, StatusBar} from 'react-native';
 import useSignInNavigation from '~/hooks/useSignInNavigator';
 import {Controller, useForm} from 'react-hook-form';
 import {schemaLogin} from './validation';
 import {yupResolver} from '@hookform/resolvers/yup';
 import {BackButton} from '~/components/BackButton';
 import useAuth from '~/hooks/useAuth';
+import {AvoidKeyboard} from '~/components/AvoidKeyboard';
 
 const Login: React.FC = () => {
   const {spacing} = useTheme();
@@ -34,6 +35,7 @@ const Login: React.FC = () => {
     control,
     handleSubmit,
     setValue,
+    setFocus,
     formState: {errors},
   } = useForm({
     resolver: yupResolver(schemaLogin),
@@ -70,95 +72,104 @@ const Login: React.FC = () => {
   };
 
   return (
-    <Container>
-      <StatusBar
-        barStyle="dark-content"
-        translucent
-        backgroundColor="transparent"
-      />
-      <HeaderOptions
-        left={<BackButton icon="closeX" onPress={handleGoBack} />}
-        right={
-          <Text color="primary" typography="body3">
-            Esqueci minha senha
-          </Text>
-        }
-      />
-      <Separator height={spacing.md} />
-      <Text typography="h3">Login</Text>
-      <Separator height={spacing.md} />
+    <AvoidKeyboard>
+      <Container>
+        <StatusBar
+          barStyle="dark-content"
+          translucent
+          backgroundColor="transparent"
+        />
+        <HeaderOptions
+          left={<BackButton icon="closeX" onPress={handleGoBack} />}
+          right={
+            <Text color="primary" typography="body3">
+              Esqueci minha senha
+            </Text>
+          }
+        />
+        <ScrollView showsVerticalScrollIndicator={false}>
+          <Separator height={spacing.md} />
+          <Text typography="h3">Login</Text>
+          <Separator height={spacing.md} />
 
-      <Controller
-        name="email"
-        control={control}
-        render={({field: {ref, onBlur, onChange, value}}) => (
-          <Input
-            ref={ref}
-            autoCapitalize="none"
-            autoComplete="email"
-            keyboardType="email-address"
-            onBlur={onBlur}
-            onChange={onChange}
-            onChangeText={text => setValue('email', text)}
-            value={value}
-            label="Email"
-            icon="checkCircle"
-            iconColor="primary"
-            error={errors.email?.message}
+          <Controller
+            name="email"
+            control={control}
+            render={({field: {ref, onBlur, onChange, value}}) => (
+              <Input
+                ref={ref}
+                autoCapitalize="none"
+                autoComplete="email"
+                keyboardType="email-address"
+                onBlur={onBlur}
+                onChange={onChange}
+                onChangeText={text => setValue('email', text)}
+                value={value}
+                label="Email"
+                icon="checkCircle"
+                iconColor="primary"
+                error={errors.email?.message}
+                returnKeyType="next"
+                onSubmitEditing={() => setFocus('password')}
+              />
+            )}
           />
-        )}
-      />
 
-      <Controller
-        name="password"
-        control={control}
-        render={({field: {ref, onBlur, onChange, value}}) => (
-          <Input
-            ref={ref}
-            autoCapitalize="none"
-            autoComplete="password"
-            onBlur={onBlur}
-            onChange={onChange}
-            onChangeText={text => setValue('password', text)}
-            value={value}
-            label="Senha"
-            secureTextEntry
-            iconColor="primary"
-            error={errors.password?.message}
+          <Controller
+            name="password"
+            control={control}
+            render={({field: {ref, onBlur, onChange, value}}) => (
+              <Input
+                ref={ref}
+                autoCapitalize="none"
+                autoComplete="password"
+                onBlur={onBlur}
+                onChange={onChange}
+                onChangeText={text => setValue('password', text)}
+                value={value}
+                label="Senha"
+                secureTextEntry
+                iconColor="primary"
+                error={errors.password?.message}
+                returnKeyType="done"
+                onSubmitEditing={onSubmit}
+              />
+            )}
           />
-        )}
-      />
 
-      <Separator height={spacing.md} />
-      <Button
-        onPress={onSubmit}
-        loading={loading}
-        disabled={loading}
-        testID="button-login-email">
-        Login
-      </Button>
-      <Separator height={spacing.md} />
-      <AcessText color="surface500" typography="body3">
-        ou acesse com login social
-      </AcessText>
-      <Separator height={spacing.md} />
-      <Button
-        typography="caption"
-        icon={<Icon icon="apple" />}
-        color="secondary"
-        mode="outlined">
-        Continuar com a Apple
-      </Button>
-      <Separator height={spacing.md} />
-      <Button
-        typography="caption"
-        icon={<Icon icon="google" />}
-        color="secondary"
-        onPress={handleGoogleButton}
-        mode="outlined">
-        Continuar com o Google
-      </Button>
-    </Container>
+          <Separator height={spacing.md} />
+          <Button
+            onPress={onSubmit}
+            loading={loading}
+            disabled={loading}
+            testID="button-login-email">
+            Login
+          </Button>
+          <Separator height={spacing.md} />
+          <AcessText color="surface500" typography="body3">
+            ou acesse com login social
+          </AcessText>
+          <Separator height={spacing.md} />
+          <Button
+            typography="caption"
+            icon={<Icon icon="apple" />}
+            color="secondary"
+            mode="outlined">
+            Continuar com a Apple
+          </Button>
+          <Separator height={spacing.md} />
+          <Button
+            typography="caption"
+            icon={<Icon icon="google" />}
+            color="secondary"
+            onPress={handleGoogleButton}
+            mode="outlined">
+            Continuar com o Google
+          </Button>
+          <Separator height={spacing.xxl} />
+        </ScrollView>
+      </Container>
+    </AvoidKeyboard>
   );
 };
 
