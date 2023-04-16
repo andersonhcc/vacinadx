@@ -7,7 +7,7 @@ export const Container = styled(SafeAreaView)`
 `;
 
 export const Card = styled.View`
-  border-radius: ${({theme}) => theme.borders.radius}px;
+  border-radius: ${({theme}) => theme.borders.radius.xs}px;
   background-color: ${({theme}) => theme.colors.background.main};
   padding: ${({theme}) => theme.spacing.lg}px;
   flex-direction: row;
