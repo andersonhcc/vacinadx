@@ -117,13 +117,13 @@ exports[`Text Snapshot should render with primary color 1`] = `
           "fontFamily": "Montserrat-Regular",
           "fontSize": 24,
         },
-        "h8": {
-          "fontFamily": "Montserrat-SemiBold",
-          "fontSize": 24,
+        "h7": {
+          "fontFamily": "OpenSans-SemiBold",
+          "fontSize": 18,
         },
         "h8": {
           "fontFamily": "Montserrat-SemiBold",
-          "fontSize": 20,
+          "fontSize": 24,
         },
         "overline": {
           "fontFamily": "OpenSans-SemiBold",
@@ -263,13 +263,13 @@ exports[`Text Snapshot should render with typography body3 1`] = `
           "fontFamily": "Montserrat-Regular",
           "fontSize": 24,
         },
-        "h8": {
-          "fontFamily": "Montserrat-SemiBold",
-          "fontSize": 24,
+        "h7": {
+          "fontFamily": "OpenSans-SemiBold",
+          "fontSize": 18,
         },
         "h8": {
           "fontFamily": "Montserrat-SemiBold",
-          "fontSize": 20,
+          "fontSize": 24,
         },
         "overline": {
           "fontFamily": "OpenSans-SemiBold",
@@ -409,13 +409,13 @@ exports[`Text Snapshot should render without props 1`] = `
           "fontFamily": "Montserrat-Regular",
           "fontSize": 24,
         },
-        "h8": {
-          "fontFamily": "Montserrat-SemiBold",
-          "fontSize": 24,
+        "h7": {
+          "fontFamily": "OpenSans-SemiBold",
+          "fontSize": 18,
         },
         "h8": {
           "fontFamily": "Montserrat-SemiBold",
-          "fontSize": 20,
+          "fontSize": 24,
         },
         "overline": {
           "fontFamily": "OpenSans-SemiBold",

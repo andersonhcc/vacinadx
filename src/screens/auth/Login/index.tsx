@@ -5,7 +5,6 @@ import {Separator} from '~/components/Separator';
 import {useTheme} from 'styled-components';
 import {Text} from '~/components/Text';
 import Input from '~/components/Input';
-import {GoogleSignin} from '@react-native-google-signin/google-signin';
 import {Container, AcessText} from './styles';
 import {Button} from '~/components/Button';
 import {ScrollView, StatusBar} from 'react-native';
@@ -62,14 +61,14 @@ const Login: React.FC = () => {
     )();
   };
 
-  const handleGoogleButton = async () => {
-    try {
-      const {user} = await GoogleSignin.signIn();
-      console.log(user);
-    } catch (err) {
-      console.log(err);
-    }
-  };
+  // const handleGoogleButton = async () => {
+  //   try {
+  //     const {user} = await GoogleSignin.signIn();
+  //     console.log(user);
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // };
 
   return (
     <AvoidKeyboard>
@@ -162,7 +161,7 @@ const Login: React.FC = () => {
             typography="caption"
             icon={<Icon icon="google" />}
             color="secondary"
-            onPress={handleGoogleButton}
+            onPress={() => {}}
             mode="outlined">
             Continuar com o Google
           </Button>

@@ -30,10 +30,6 @@ export const typographyCommon: Typography = {
     fontSize: 24,
     fontFamily: Fonts.montserratSemiBold,
   },
-  h8: {
-    fontSize: 20,
-    fontFamily: Fonts.montserratSemiBold,
-  },
   subtitle1: {
     fontSize: 18,
     fontFamily: Fonts.openSansRegular,
@@ -60,6 +56,10 @@ export const typographyCommon: Typography = {
   },
   overline: {
     fontSize: 14,
+    fontFamily: Fonts.openSansSemiBold,
+  },
+  h7: {
+    fontSize: 18,
     fontFamily: Fonts.openSansSemiBold,
   },
 };

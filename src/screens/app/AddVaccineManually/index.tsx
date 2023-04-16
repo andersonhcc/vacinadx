@@ -58,14 +58,15 @@ const AddVaccineManually: React.FC = () => {
             translucent
             backgroundColor="transparent"
           />
-          <HeaderOptions
-            left={
-              <Pressable onPress={goBack}>
-                <Icon icon="closeX" size={15} />
-              </Pressable>
-            }
-          />
+
           <Content>
+            <HeaderOptions
+              left={
+                <Pressable onPress={goBack}>
+                  <Icon icon="closeX" size={15} />
+                </Pressable>
+              }
+            />
             <Separator height={spacing.md} />
             <Text typography="h7">Adicione as informações da vacina</Text>
             <Separator height={spacing.lg} />
