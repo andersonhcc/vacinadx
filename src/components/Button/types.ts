@@ -8,7 +8,9 @@ export interface ButtonProps extends TouchableOpacityProps {
   children: string;
   color?: ColorsType;
   mode?: Mode;
-  loading?: boolean;
   icon?: React.ReactNode;
   typography?: TypographyType;
+  loading?: boolean;
+  paddingHorizontal?: number;
+  paddingVertical?: number;
 }

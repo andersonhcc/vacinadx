@@ -13,8 +13,11 @@ import {useNavigation} from '@react-navigation/native';
 const Home: React.FC = () => {
   const {navigate} = useNavigation();
 
-  const handleAddVacine = () => {
+  const handleNavigationAddVacine = () => {
     navigate('AddVaccine');
+  };
+  const handleNavigationMyVaccine = () => {
+    navigate('MyVaccine');
   };
 
   return (
@@ -26,11 +29,15 @@ const Home: React.FC = () => {
       />
       <Header />
       <ScrollViewItems horizontal showsHorizontalScrollIndicator={false}>
-        <SmallCard icon="vaccine" title={'Minhas\nvacinas'} />
+        <SmallCard
+          icon="vaccine"
+          onPress={handleNavigationMyVaccine}
+          title={'Minhas\nvacinas'}
+        />
         <Separator width={15} />
         <SmallCard
           icon="plus"
-          onPress={handleAddVacine}
+          onPress={handleNavigationAddVacine}
           title={'Adicionar\nvacinas'}
         />
         <Separator width={15} />

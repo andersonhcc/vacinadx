@@ -1,4 +1,4 @@
-import styled from 'styled-components/native';
+import styled, {css} from 'styled-components/native';
 import {Mode} from './types';
 import {TypographyType} from 'styled-components/native';
 
@@ -6,14 +6,34 @@ interface ContainerProps {
   readonly color: string;
   readonly borderColor: string;
   readonly mode: Mode;
+  readonly paddingHorizontal?: number;
+  readonly paddingVertical?: number;
 }
 
 export const Container = styled.TouchableOpacity<ContainerProps>`
+  padding: 12px 0 12px 0;
+  ${({paddingHorizontal}) => {
+    if (paddingHorizontal) {
+      return css`
+        padding-left: ${paddingHorizontal}px;
+        padding-right: ${paddingHorizontal}px;
+      `;
+    }
+  }}
+
+  ${({paddingVertical}) => {
+    if (paddingVertical) {
+      return css`
+        padding-top: ${paddingVertical}px;
+        padding-bottom: ${paddingVertical}px;
+      `;
+    }
+  }}
+
   align-items: center;
   justify-content: center;
   border-radius: ${({theme}) => theme.borders.radius.sm}px;
   flex-direction: row;
-  padding: 12px 0 12px 0;
   border-color: ${({borderColor}) => borderColor || 'transparent'};
   border-width: 1px;
 

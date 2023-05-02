@@ -8,6 +8,7 @@ import apple from '../assets/icons/apple/Vector.png';
 import google from '../assets/icons/google/Vector.png';
 import home from '../assets/icons/home/Vector.png';
 import profile from '../assets/icons/profile/Vector.png';
+import search from '../assets/icons/search/Vector.png';
 
 import back from '~/assets/icons/back/Vector.png';
 import openEye from '~/assets/icons/openEye/Vector.png';
@@ -47,7 +48,8 @@ export type NameIconType =
   | 'pencil'
   | 'radioButtonCheck'
   | 'radioButtonNoCheck'
-  | 'google';
+  | 'google'
+  | 'search';
 
 export default {
   dog,
@@ -73,4 +75,5 @@ export default {
   pencil,
   radioButtonCheck,
   radioButtonNoCheck,
+  search,
 };
