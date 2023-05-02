@@ -3,7 +3,7 @@ import React from 'react';
 import {Profile} from '~/screens/app/Profile';
 import Icon from '~/components/Icon';
 import {useTheme} from 'styled-components';
-import {HomeStack} from './HomeStack';
+import {HomeStack} from '../HomeStack';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamsList>();
 const BottomTabsNavigator = () => {

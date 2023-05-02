@@ -9,6 +9,7 @@ import {VaccineCardProps} from './types';
 import {format, isBefore} from 'date-fns';
 import {useTheme} from 'styled-components';
 import {Shadow} from '../Shadow';
+import {useConvertDose} from '~/hooks/useConvertDose';
 
 const VaccineCard = ({date, shot, title, ...rest}: VaccineCardProps) => {
   const {colors} = useTheme();
@@ -21,25 +22,7 @@ const VaccineCard = ({date, shot, title, ...rest}: VaccineCardProps) => {
     return format(new Date(date), 'dd/MM/yy');
   }, [date]);
 
-  const dose = useMemo(() => {
-    switch (shot) {
-      case 'first-dose':
-        return {
-          color: colors.primary.main,
-          title: '1º dose',
-        };
-      case 'second-dose':
-        return {
-          color: colors.orange.main,
-          title: '2º dose',
-        };
-      default:
-        return {
-          color: colors.secondary.main,
-          title: 'dose única',
-        };
-    }
-  }, [shot, colors]);
+  const dose = useConvertDose({shot});
 
   return (
     <Shadow {...rest}>
