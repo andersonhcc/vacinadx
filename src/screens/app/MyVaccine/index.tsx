@@ -13,7 +13,7 @@ import {Text} from '~/components/Text';
 import {VaccineCard} from '~/components/VaccineCard';
 
 const MyVaccine: React.FC = () => {
-  const {goBack} = useNavigation();
+  const {goBack, navigate} = useNavigation<SignedInStackNavigatorProp>();
   const {spacing} = useTheme();
 
   const [toggleFilter, setToggleFilter] = useState<FilterVaccine>('all');
@@ -22,6 +22,9 @@ const MyVaccine: React.FC = () => {
   const handleToggleFilter = () => {
     setToggleFilter(old => (old === 'all' ? 'next' : 'all'));
   };
+
+  const handleNavigateToVaccineDetail = vaccine =>
+    navigate('VaccineDetail', {vaccine});
 
   return (
     <Container>
@@ -73,6 +76,12 @@ const MyVaccine: React.FC = () => {
         renderItem={({item}) => {
           return (
             <VaccineCard
+              onPress={() =>
+                handleNavigateToVaccineDetail({
+                  shot: 'second-dose',
+                  title: 'Jhonsons',
+                })
+              }
               key={item}
               date={new Date(2022, 21, 5).toISOString()}
               shot={item % 2 === 0 ? 'second-dose' : 'first-dose'}

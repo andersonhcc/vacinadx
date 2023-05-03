@@ -24,6 +24,7 @@ import qrcode from '~/assets/icons/qrcode/Vector.png';
 import pencil from '~/assets/icons/pencil/Vector.png';
 import radioButtonCheck from '~/assets/icons/radioButtonCheck/Vector.png';
 import radioButtonNoCheck from '~/assets/icons/radioButtonNoCheck/Vector.png';
+import dose from '~/assets/icons/dose/Vector.png';
 
 export type NameIconType =
   | 'dog'
@@ -49,7 +50,8 @@ export type NameIconType =
   | 'radioButtonCheck'
   | 'radioButtonNoCheck'
   | 'google'
-  | 'search';
+  | 'search'
+  | 'dose';
 
 export default {
   dog,
@@ -76,4 +78,5 @@ export default {
   radioButtonCheck,
   radioButtonNoCheck,
   search,
+  dose,
 };
