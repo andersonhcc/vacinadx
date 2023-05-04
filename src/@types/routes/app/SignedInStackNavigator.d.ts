@@ -5,6 +5,7 @@ declare global {
   export type SignedInStackParamsList = {
     BottomTabHome: undefined;
     VaccineDetail: {vaccine: any};
+    VaccineOnMap: undefined;
   };
 
   /* useNavigation types */

@@ -11,13 +11,16 @@ import {Banner} from './localComponents/Banner';
 import {useNavigation} from '@react-navigation/native';
 
 const Home: React.FC = () => {
-  const {navigate} = useNavigation();
+  const {navigate} = useNavigation<SignedInStackNavigatorProp>();
 
   const handleNavigationAddVacine = () => {
     navigate('AddVaccine');
   };
   const handleNavigationMyVaccine = () => {
     navigate('MyVaccine');
+  };
+  const handleNavigationVaccineOnMaps = () => {
+    navigate('VaccineOnMap');
   };
 
   return (
@@ -41,7 +44,11 @@ const Home: React.FC = () => {
           title={'Adicionar\nvacinas'}
         />
         <Separator width={15} />
-        <SmallCard icon="pin" title={'Procurar local\n de vacinação'} />
+        <SmallCard
+          icon="pin"
+          title={'Procurar local\n de vacinação'}
+          onPress={handleNavigationVaccineOnMaps}
+        />
       </ScrollViewItems>
       <Content>
         <Text typography="h8">Próximas vacinas</Text>
