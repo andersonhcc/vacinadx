@@ -11,7 +11,8 @@
     "preandroid": "npx react-native-asset",
     "preios": "npx react-native-asset",
     "rev": "adb reverse tcp:8081 tcp:8081",
-    "pi": "arch -x86_64 pod install"
+    "pi": "arch -x86_64 pod install",
+    "postinstall": "react-native setup-ios-permissions && pod-install"
   },
   "dependencies": {
     "@hookform/resolvers": "^2.9.11",
@@ -26,6 +27,7 @@
     "react-hook-form": "^7.43.1",
     "react-native": "0.71.2",
     "react-native-camera": "^4.2.1",
+    "react-native-maps": "^1.7.1",
     "react-native-permissions": "^3.8.0",
     "react-native-progress": "^5.0.0",
     "react-native-qrcode-scanner": "^1.5.5",
@@ -75,12 +77,14 @@
       "!**/node_modules/**"
     ]
   },
-  "reactNativePermissionsIOS": {
-    "photo": {
-      "title": "Permission to access photos",
-      "message": "We need permission to access your photos to provide the best experience.",
-      "buttonPositive": "Allow",
-      "buttonNegative": "Deny"
-    }
-  }
+  "reactNativePermissionsIOS": [
+    "Camera",
+    "LocationAccuracy",
+    "LocationAlways",
+    "LocationWhenInUse",
+    "MediaLibrary",
+    "Microphone",
+    "PhotoLibrary",
+    "PhotoLibraryAddOnly"
+  ]
 }

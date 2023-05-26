@@ -4,6 +4,9 @@ import {AuthProvider} from './context/Auth';
 import Routes from './navigation';
 import {NavigationContainer} from '@react-navigation/native';
 import useAppearance from './hooks/useAppearance';
+import {enableLatestRenderer} from 'react-native-maps';
+
+enableLatestRenderer();
 
 const App: React.FC = () => {
   const {theme} = useAppearance();
