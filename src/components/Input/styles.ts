@@ -3,7 +3,7 @@ import {Text} from '../Text';
 import {InputProps} from './types';
 
 export const Container = styled.View`
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
 `;
 
 export const InputInternal = styled.TextInput`

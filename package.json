@@ -12,12 +12,14 @@
     "preios": "npx react-native-asset",
     "rev": "adb reverse tcp:8081 tcp:8081",
     "pi": "arch -x86_64 pod install",
-    "postinstall": "react-native setup-ios-permissions && pod-install"
+    "postinstall": "react-native setup-ios-permissions && pod-install",
+    "pod-install-x86": "arch -x86_64 pod install"
   },
   "dependencies": {
     "@hookform/resolvers": "^2.9.11",
     "@invertase/react-native-apple-authentication": "^2.2.2",
     "@react-native-async-storage/async-storage": "^1.17.11",
+    "@react-native-google-signin/google-signin": "^10.0.1",
     "@react-navigation/bottom-tabs": "^6.5.4",
     "@react-navigation/native": "^6.1.3",
     "@react-navigation/native-stack": "^6.9.9",
