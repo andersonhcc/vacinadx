@@ -10,6 +10,7 @@ import {Alert} from 'react-native';
 import api from '~/services/api';
 import {RequestCreateUserData} from '~/services/resource/User/types';
 import {createUserResource} from '~/services/resource/User';
+import {checkIfExistsUserResource} from '~/services/resource/Auth';
 
 export const AuthContext = createContext<AuthContextProp>(
   {} as AuthContextProp,
@@ -38,8 +39,8 @@ export const AuthProvider = ({children}: Props) => {
     try {
       setLoading(true);
       const response = await signInResource(data);
-      setUser(response.user);
-      await saveUserToStorageAndConfigToken(response.user);
+      setUser(response[0]);
+      await saveUserToStorageAndConfigToken(response[0]);
       setIsSignedIn(true);
     } catch (error) {
       console.log(error);
@@ -53,12 +54,28 @@ export const AuthProvider = ({children}: Props) => {
     try {
       setLoading(true);
       const response = await createUserResource(data);
-      setUser(response.user);
-      await saveUserToStorageAndConfigToken(response.user);
+      setUser(response);
+      await saveUserToStorageAndConfigToken(response);
       setIsSignedIn(true);
     } catch (error) {
       console.log(error);
       Alert.alert('Não foi possível realizar login, tente novamente!');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const checkExistUser = async (data: Partial<UserDTO>) => {
+    try {
+      setLoading(true);
+      const response = await checkIfExistsUserResource(data);
+
+      if (response.length > 0) {
+        return true;
+      }
+      return false;
+    } catch (error) {
+      return false;
     } finally {
       setLoading(false);
     }
@@ -90,7 +107,15 @@ export const AuthProvider = ({children}: Props) => {
 
   return (
     <AuthContext.Provider
-      value={{user, isSignedIn, loading, signIn, signOut, signUp}}>
+      value={{
+        user,
+        isSignedIn,
+        loading,
+        signIn,
+        signOut,
+        signUp,
+        checkExistUser,
+      }}>
       {!rehydrateLoading && children}
     </AuthContext.Provider>
   );

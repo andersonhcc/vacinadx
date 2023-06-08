@@ -1,10 +1,5 @@
 import {UserDTO} from '~/@types/dtos/user';
 
-export interface RequestSignInData {
-  email: string;
-  password: string;
-}
+export type RequestSignInData = Partial<UserDTO>;
 
-export interface ResponseSignInData {
-  user: UserDTO;
-}
+export type ResponseSignInData = Array<UserDTO>;

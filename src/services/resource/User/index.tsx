@@ -4,7 +4,7 @@ import {ResponseCreateUserData, RequestCreateUserData} from './types';
 export const createUserResource = async (
   CreateUser: RequestCreateUserData,
 ): Promise<ResponseCreateUserData> => {
-  const {data} = await api.post<ResponseCreateUserData>('/user', {
+  const {data} = await api.post<ResponseCreateUserData>('/users', {
     CreateUser,
   });
   return data;

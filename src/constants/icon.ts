@@ -26,6 +26,7 @@ import radioButtonCheck from '~/assets/icons/radioButtonCheck/Vector.png';
 import radioButtonNoCheck from '~/assets/icons/radioButtonNoCheck/Vector.png';
 import dose from '~/assets/icons/dose/Vector.png';
 import marker from '~/assets/icons/marker/Vector.png';
+import emptyBox from '~/assets/icons/emptyBox/Vector.png';
 
 export type NameIconType =
   | 'dog'
@@ -53,6 +54,7 @@ export type NameIconType =
   | 'google'
   | 'search'
   | 'marker'
+  | 'emptyBox'
   | 'dose';
 
 export default {
@@ -82,4 +84,5 @@ export default {
   search,
   dose,
   marker,
+  emptyBox,
 };

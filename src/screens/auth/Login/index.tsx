@@ -15,6 +15,7 @@ import {yupResolver} from '@hookform/resolvers/yup';
 import {BackButton} from '~/components/BackButton';
 import useAuth from '~/hooks/useAuth';
 import {AvoidKeyboard} from '~/components/AvoidKeyboard';
+import {GoogleSignin} from '@react-native-google-signin/google-signin';
 
 const Login: React.FC = () => {
   const {spacing} = useTheme();
@@ -24,7 +25,7 @@ const Login: React.FC = () => {
    * Hooks
    */
 
-  const {loading, signIn} = useAuth();
+  const {loading, signIn, checkExistUser, signUp} = useAuth();
 
   /**
    * Forms
@@ -61,14 +62,27 @@ const Login: React.FC = () => {
     )();
   };
 
-  // const handleGoogleButton = async () => {
-  //   try {
-  //     const {user} = await GoogleSignin.signIn();
-  //     console.log(user);
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // };
+  const handleGoogleButton = async () => {
+    try {
+      const {user} = await GoogleSignin.signIn();
+      const hasUser = await checkExistUser({
+        email: user.email,
+      });
+      if (hasUser) {
+        return await signIn({email: user.email});
+      }
+
+      return signUp({
+        ...(user.photo ? {avatar: user.photo} : {}),
+        ...(user.givenName ? {firstName: user.givenName} : {}),
+        ...(user.familyName ? {lastName: user.familyName} : {}),
+        //  avatar: user.photo ?? undefined,
+        email: user.email,
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <AvoidKeyboard>
@@ -161,7 +175,7 @@ const Login: React.FC = () => {
             typography="caption"
             icon={<Icon icon="google" />}
             color="secondary"
-            onPress={() => {}}
+            onPress={handleGoogleButton}
             mode="outlined">
             Continuar com o Google
           </Button>

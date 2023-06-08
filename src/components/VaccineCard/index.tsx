@@ -1,8 +1,14 @@
 import React, {useMemo} from 'react';
 
-import {BadgeLeft, Container, ChipWrap, Chip, VaccineDate} from './styles';
+import {
+  BadgeLeft,
+  Container,
+  ChipWrap,
+  Chip,
+  VaccineDate,
+  TitleContainer,
+} from './styles';
 import {Text} from '../Text';
-import {View} from 'react-native';
 import {Separator} from '../Separator';
 import Icon from '../Icon';
 import {VaccineCardProps} from './types';
@@ -30,15 +36,17 @@ const VaccineCard = ({date, shot, title, ...rest}: VaccineCardProps) => {
         <BadgeLeft
           color={isBeforeToday ? colors.lightGreen.main : colors.orange.main}
         />
-        <View>
-          <Text typography="body2">{title}</Text>
+        <TitleContainer>
+          <Text numberOfLines={1} typography="body2">
+            {title}
+          </Text>
           <Separator height={18} />
           <ChipWrap>
             <Chip color={dose.color}>
               <Text color="background">{dose.title}</Text>
             </Chip>
           </ChipWrap>
-        </View>
+        </TitleContainer>
         <VaccineDate>
           <Icon icon="calendar" />
           <Separator width={12} />
